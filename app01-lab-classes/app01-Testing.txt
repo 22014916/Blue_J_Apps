@@ -1,5 +1,28 @@
 LabClass co452Lab = new LabClass(3);
-Student veena = new Student("Veena Patel", "20388712");
-Student gita = new Student("Gita Ralhan", "20844312");
-Student tim = new Student("Tim Lee", "20199812");
-co452Lab.enrollStudent(gita);
+Student john = new Student("John Smith", "111");
+Student alex = new Student("Alex Jones", "333");
+Student ryan = new Student("Ryan Hardy", "777");
+Course computing = new Course("Computing", "G400");
+co452Lab.setInstructor("Nicholas Day");
+co452Lab.enrollStudent(john);
+co452Lab.enrollStudent(alex);
+co452Lab.enrollStudent(ryan);
+co452Lab.setRoom("G100");
+co452Lab.setTime("Tuesday 29th September 2020");
+john.addCredits(20);
+alex.addCredits(20);
+ryan.addCredits(20);
+co452Lab.printList();
+Lab class Tuesday 29th September 2020
+Instructor: Nicholas Day   Room: G100
+Class list:
+Student Name:John Smith
+Student id:111
+Student credits:20
+Student Name:Alex Jones
+Student id:333
+Student credits:20
+Student Name:Ryan Hardy
+Student id:777
+Student credits:20
+Number of students: 3

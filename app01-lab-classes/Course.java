@@ -9,6 +9,7 @@ public class Course
 {
     // instance variables - replace the example below with your own
     private String title;
+    
     private String codenumber;
 
     /**
@@ -19,6 +20,10 @@ public class Course
       this.title = title;
       this.codenumber = codenumber;
     }
+    
+    /**
+     * This will print out the course title and the course codenumber
+     */
     public void print ()
  {
     System.out.println("Course:" + title + ", Code Number:" +codenumber);

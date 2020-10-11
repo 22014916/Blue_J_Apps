@@ -11,21 +11,59 @@ public class Student
  
  private String id;
     //
-    private int credits;
+ private int credits;
 
-    private Course course;
+ private Course course;
+  
     /**
      * Constructor for objects of class Student
      */
     public Student(String fullName,String studentID)
     {
-        name = fullName;
-        id = studentID;
-        credits= 0;
+        this.name = fullName;
+        this.id = studentID;
+        this.credits= 0;
     }
-public void addCourse(Course course)
-{
-  this.course = course;
-} 
-}
+    
+    public void changeName(String replacementName) {
+        this.name = replacementName;
+    }
+    
+    public String getStudentID() {
+        return id;
+        
+    }
+    
+    public void addCredits (int additionalPoints) {
+    this.credits=additionalPoints;
+    }
+    
+    public String getLoginName() {
+    return name.substring(0,4) + id.substring(0,3);
+  }
 
+  /**
+   * This will add the course to student which will be the course the student
+   * is enrolled to.
+   */
+  public void enrolOnCourse()
+  {
+      this.course = course;
+    }
+  
+  public void print () {
+      System.out.println("Student Name:" +name);
+      System.out.println("Student id:" +id);
+      System.out.println("Student credits:" +credits);
+    }
+    
+    public void addCourse (String codeNumber, String title) {
+   
+}
+    }
+    
+    
+    
+ 
+ 
+  
