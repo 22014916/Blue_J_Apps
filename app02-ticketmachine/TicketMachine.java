@@ -84,7 +84,16 @@ public class TicketMachine
              issuedticket=aylesburyTicket;
             }
     
+            public void selectAmershamTicket()
+    {
+             issuedticket=amershamTicket;
+            }
     
+              public void selectHighWycombeTicket()
+    {
+             issuedticket=highwycombeTicket;
+            }
+            
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
