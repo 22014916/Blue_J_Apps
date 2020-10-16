@@ -1,0 +1,46 @@
+TicketMachine TicketMachine = new TicketMachine();
+Ticket aylesbury = new Ticket("Aylesbury", 220);
+Ticket amersham = new Ticket("Amersham", 300);
+Ticket highwycombe = new Ticket("High Wycombe", 330);
+TicketMachine.insert100p();
+TicketMachine.selectAmershamTicket();
+TicketMachine.printTicket();
+You must insert at least: 200 more cents.
+TicketMachine.insert200p();
+TicketMachine.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+TicketAmershamPrice:300IssuedFri Oct 16 12:50:22 BST 2020
+# 300 pence.
+##################
+
+TicketMachine.insert200p();
+TicketMachine.insert200p();
+TicketMachine.selectHighWycombeTicket();
+TicketMachine.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+TicketHigh WycombePrice:330IssuedFri Oct 16 12:50:22 BST 2020
+# 330 pence.
+##################
+
+TicketMachine.refundBalance()
+    returned int 70
+TicketMachine.refundBalance()
+    returned int 0
+TicketMachine.insert200p();
+TicketMachine.insert200p();
+TicketMachine.insert200p();
+TicketMachine.selectHighWycombeTicket();
+TicketMachine.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+TicketHigh WycombePrice:330IssuedFri Oct 16 12:50:22 BST 2020
+# 330 pence.
+##################
+
+TicketMachine.refundBalance()
+    returned int 270

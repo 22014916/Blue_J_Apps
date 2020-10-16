@@ -3,18 +3,22 @@ import java.util.Date;
 /**
  * Write a description of class Ticket here.
  *
- * @author (your name)
+ * @author (Abdul Salam)
  * @version (a version number or a date)
  */
 public class Ticket
 {
    //Attributes
    
+   //The Journey destination
    private String destination;
    
+   // The ticket price in british pence
    private int price;
    
+   // Date and time of the issued ticket
    private Date issuedateTime;
+   
    
    
     /**
@@ -30,7 +34,20 @@ public class Ticket
         issuedateTime = new Date();
     }  
     
-    /**
+    public int getPrice()
+    { return price;
+        
+    }   
+    
+    
+    public String getDestination()
+    { 
+        return destination;
+    }
+    
+    /** This is a print of the ticket informatiin printing 
+     * destination of the ticket the price and 
+     * dateTime.
      * 
      */
     public void print ()
@@ -39,4 +56,8 @@ public class Ticket
         "Price:" + price +
         "Issued" + issuedateTime);
     }
+    
+    
+    
+    
  }

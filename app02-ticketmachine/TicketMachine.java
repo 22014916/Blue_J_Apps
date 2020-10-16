@@ -9,12 +9,12 @@
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  * 
- * Modified by Student Name
+ * Modified by Abdul Salam
  */
 public class TicketMachine
 {
     // The price of a ticket from this machine.
-    private int price;
+  
     // The amount of money entered by a customer so far.
     private int balance;
     // The total amount of money collected by this machine.
@@ -28,12 +28,13 @@ public class TicketMachine
     
     private Ticket highwycombeTicket;
    
+    Coin coin;
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine()
     {
-        price = cost;
+        
         balance = 0;
         total = 0;
         
@@ -45,13 +46,7 @@ public class TicketMachine
     
     
 
-    /**
-     * @Return The price of a ticket.
-     */
-    public int getPrice()
-    {
-        return price;
-    }
+    
 
     /**
      * Return The amount of money already inserted for the
@@ -93,21 +88,23 @@ public class TicketMachine
     {
              issuedticket=highwycombeTicket;
             }
-            
+     
+     
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
     public void printTicket()
-    {
+    { int price = issuedticket.getPrice();
         if(balance >= price) 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# Ticket" );
+            issuedticket.print();
+            System.out.println("# " + price + " pence.");
             System.out.println("##################");
             System.out.println();
 
@@ -136,5 +133,25 @@ public class TicketMachine
         return amountToRefund;
     }
     
+   public void insert20p()
+   {
+   balance = balance +20;
+   }
+   
+   public void insert10p()
+   {
+   balance = balance +10;
+   }
+   
+   public void insert100p()
+   {
+   balance = balance +100;
+   }
+   
+ public void insert200p()
+   {
+   balance = balance +200;
+   }
 }
+
 
