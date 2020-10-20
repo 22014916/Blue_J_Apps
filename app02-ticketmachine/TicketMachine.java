@@ -44,8 +44,8 @@ public class TicketMachine
         issuedticket = null; 
     }
     
-    
-
+  
+        
     
 
     /**
@@ -136,22 +136,30 @@ public class TicketMachine
    public void insert20p()
    {
    balance = balance +20;
+    printBalance(20);
    }
    
    public void insert10p()
    {
    balance = balance +10;
+    printBalance(10);
    }
    
    public void insert100p()
    {
    balance = balance +100;
+    printBalance(100);
    }
    
  public void insert200p()
    {
    balance = balance +200;
+   printBalance(200);
    }
+ public void printBalance(int amount){
+ System.out.println("you have inserted");
+ System.out.println("Current balance = " + balance );
+}
 }
 
 
