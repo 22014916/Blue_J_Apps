@@ -1,87 +1,76 @@
-import java.util.*;
 
 /**
- * The Student class represents a student in a student administration system.
- * It holds the student details relevant in our context.
- * 
- * @author Michael Kölling and David Barnes
- * @version 2016.02.29
+ * Write a description of class Student here.
+ *
+ * @author (Abdul Salam)
+ * @version (a version number or a date)
  */
 public class Student
 {
-    // the student's full name
-    private String name;
-    // the student ID
-    private String id;
-    // the amount of credits for study taken so far
-    private int credits;
+ private String name;
+ 
+ private String id;
+    //
+ private int credits;
+
+ private Course course;
+  
+    /**
+     * Constructor for objects of class Student
+     */
+    public Student(String fullName,String studentID)
+    {
+        this.name = fullName;
+        this.id = studentID;
+        this.credits= 0;
+    }
     
-    /**
-     * Create a new student with a given name and ID number.
-     */
-    public Student(String fullName, String studentID)
-    {
-        name = fullName;
-        id = studentID;
-        credits = 0;
+    public void changeName(String replacementName) {
+        this.name = replacementName;
     }
-
-    /**
-     * Return the full name of this student.
-     */
-    public String getName()
-    {
-        return name;
-    }
-
-    /**
-     * Set a new name for this student.
-     */
-    public void changeName(String replacementName)
-    {
-        name = replacementName;
-    }
-
-    /**
-     * Return the student ID of this student.
-     */
-    public String getStudentID()
-    {
+    
+    public String getStudentID() {
         return id;
-    }
-
-    /**
-     * Add some credit points to the student's accumulated credits.
-     */
-    public void addCredits(int additionalPoints)
-    {
-        credits += additionalPoints;
-    }
-
-    
-    /**
-     * Return the number of credit points this student has accumulated.
-     */
-    public int getCredits()
-    {
-        return credits;
-    }
-
-    /**
-     * Return the login name of this student. The login name is a combination
-     * of the first four characters of the student's name and the first three
-     * characters of the student's ID number.
-     */
-    public String getLoginName()
-    {
-        return name.substring(0,4) + id.substring(0,3);
+        
     }
     
-    /**
-     * Print the student's name and ID number to the output terminal.
-     */
-    public void print()
-    {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+    public void addCredits (int additionalPoints) {
+    this.credits=additionalPoints;
     }
+    
+    public String getLoginName() {
+    return name.substring(0,4) + id.substring(0,3);
+  }
+
+  /**
+   * This will add the course to student which will be the course the student
+   * is enrolled to.
+   */
+    public void EnrolCourse (String codeNumber, String title) {
+     course = new Course (codeNumber, title);
+} 
+  
+  public void print () {
+      System.out.println("Student Name:" +name);
+      System.out.println("Student id:" +id);
+      System.out.println("Student credits:" +credits);
+    }
+
+
+    public void printFinalGrade () {
+        
+        course.courseSummary ();
+    }
+    
+    public void calculateGrade() {
+        
+        course.calculategrade ();
+    }
+    
 }
+    
+    
+    
+ 
+ 
+  
