@@ -76,7 +76,7 @@ public class Product
                                " with a non-positive amount: " + amount);
         }
     }
-
+   
     /**
      * Sell one of these products.
      * An error is reported if there appears to be no stock.
@@ -93,4 +93,16 @@ public class Product
                 "Attempt to sell an out of stock item: " + name);
         }
     }
+    
+    /**
+     * Rename of the products
+     * @param String new name of the product
+     */
+    public void renameProducts(String name)
+    {
+        this.name = name;
+    }
+    
+    
+    
 }

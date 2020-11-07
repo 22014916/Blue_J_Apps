@@ -1,0 +1,61 @@
+StockManager stockMan1 = new StockManager();
+StockDemo stockDem1 = new StockDemo(stockMan1);
+stockDem1.showDetails(0);
+0: Samsung Galaxy S10 stock level: 0
+stockDem1.showDetails(3);
+3: Samsung Galaxy S11 stock level: 0
+stockDem1.demoDeliverProduct();
+stockDem1.demoDeliverProduct();
+stockDem1.showDetails(0);
+0: Samsung Galaxy S10 stock level: 2
+stockDem1.runDemo();
+0: Samsung Galaxy S10 stock level: 3
+0: Samsung Galaxy S10 stock level: 2
+0: Samsung Galaxy S10 stock level: 2
+0: Samsung Galaxy S10 stock level: 1
+1: Nokia Brick stock level: 9
+1: Nokia Brick stock level: 8
+0: Samsung Galaxy S10 stock level: 1
+0: Samsung Galaxy S10 stock level: 0
+3: Samsung Galaxy S11 stock level: 27
+3: Samsung Galaxy S11 stock level: 26
+3: Samsung Galaxy S11 stock level: 26
+3: Samsung Galaxy S11 stock level: 25
+5: Nokia Lumia stock level: 27
+5: Nokia Lumia stock level: 26
+7: Samsung Galaxy S7 stock level: 27
+7: Samsung Galaxy S7 stock level: 26
+2: Iphone X stock level: 15
+2: Iphone X stock level: 14
+7: Samsung Galaxy S7 stock level: 26
+7: Samsung Galaxy S7 stock level: 25
+stockDem1.runDemo();
+0: Samsung Galaxy S10 stock level: 1
+0: Samsung Galaxy S10 stock level: 0
+0: Samsung Galaxy S10 stock level: 0
+Attempt to sell an out of stock item: Samsung Galaxy S10
+0: Samsung Galaxy S10 stock level: 0
+1: Nokia Brick stock level: 11
+1: Nokia Brick stock level: 10
+0: Samsung Galaxy S10 stock level: 0
+Attempt to sell an out of stock item: Samsung Galaxy S10
+0: Samsung Galaxy S10 stock level: 0
+3: Samsung Galaxy S11 stock level: 34
+3: Samsung Galaxy S11 stock level: 33
+3: Samsung Galaxy S11 stock level: 33
+3: Samsung Galaxy S11 stock level: 32
+5: Nokia Lumia stock level: 35
+5: Nokia Lumia stock level: 34
+7: Samsung Galaxy S7 stock level: 34
+7: Samsung Galaxy S7 stock level: 33
+2: Iphone X stock level: 19
+2: Iphone X stock level: 18
+7: Samsung Galaxy S7 stock level: 33
+7: Samsung Galaxy S7 stock level: 32
+stockDem1.sellProduct(0);
+0: Samsung Galaxy S10 stock level: 0
+Attempt to sell an out of stock item: Samsung Galaxy S10
+0: Samsung Galaxy S10 stock level: 0
+stockDem1.sellProduct(2);
+2: Iphone X stock level: 18
+2: Iphone X stock level: 17

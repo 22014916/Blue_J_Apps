@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 /**
@@ -28,7 +29,7 @@ public class StockManager
     {
         stock.add(item);
     }
-    
+
     /**
      * Receive a delivery of a particular product.
      * Increase the quantity of the product by the given amount.
@@ -37,17 +38,55 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        stock.get(id).increaseQuantity(amount);
     }
-    
+
+    /**
+     * Sell a product by it's ID.
+     * Decrease the quantity of the product by the given amount.
+     * @param id The ID of the product.
+     */
+    public void sellQuantity(int id)
+    {
+        stock.get(id).sellOne();
+    }    
+
+    /**
+     * Renaming the product. The product id and also
+     * setting the parameters of them.
+     * @param int id and String name. 
+     */
+    public void renameProduct(int id, String name)
+    {
+        stock.get(id).renameProducts(name);
+    }    
+
+    /**
+     * Remove product method.
+     */
+    public void removeProduct(int id)
+    {
+        stock.remove(id);
+    }    
+
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
      *         with a matching ID.
      */
     public Product findProduct(int id)
-    {
-        return null;
+    {   
+        Product product = stock.get(id);
+        if(stock.contains(product) == true){
+            return product;
+        }
+        else {
+            System.out.println("No product found");
+            return product;
+        }
+        
     }
+
     
     /**
      * Locate a product with the given ID, and return how
@@ -64,7 +103,43 @@ public class StockManager
     /**
      * Print details of all the products.
      */
-    public void printProductDetails()
+    public void printProductDetails(int id)
     {
+        System.out.println(stock.get(id).toString());
     }
+
+    /**
+     * This is a method that prints a list of products
+     * based on their indivdual names.
+     */
+    public void productlistprint(String name)
+    {   
+        int count = 0;
+        while (stock.size() > count) {
+            String productName = stock.get(count).getName();
+            if (name.toLowerCase().contains(productName.toLowerCase())) {
+                System.out.println (stock.toString());
+            } 
+            count++;
+
+        }
+    }   
+
+    /**
+     * This is a method that prints a statement
+     * when the stock level runs low.
+     */
+
+    public void displaylowstock()
+    {
+        int count = 0;
+        while (stock.size() > count) {
+            int stocklevel = stock.get(count).getQuantity();
+            if (stocklevel <5) {
+                System.out.println (stock.toString());
+            } 
+            count++;
+
+        }
+    }    
 }

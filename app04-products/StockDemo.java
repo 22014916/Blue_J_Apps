@@ -12,29 +12,61 @@ public class StockDemo
     private StockManager manager;
 
     /**
-     * Create a StockManager and populate it with a few
-     * sample products.
+     * This is the constructor and is got a list of 10 products.
+     *
      */
-    public StockDemo()
+    public StockDemo(StockManager manager)
     {
-        manager = new StockManager();
-        manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
-        manager.addProduct(new Product(23,  "Microwave Oven"));
+        this.manager = manager;
+        
+        manager.addProduct(new Product(0, "Samsung Galaxy S10"));
+        manager.addProduct(new Product(1,  "Nokia Brick"));
+        manager.addProduct(new Product(2,  "Iphone X"));
+        manager.addProduct(new Product(3, "Samsung Galaxy S11"));
+        manager.addProduct(new Product(4, "Samsung Galaxy S9"));
+        manager.addProduct(new Product(5, "Nokia Lumia"));
+        manager.addProduct(new Product(6, "Samsung Galaxy S8"));
+        manager.addProduct(new Product(7, "Samsung Galaxy S7"));
+        manager.addProduct(new Product(8, "Samsung Galaxy S6"));
+        manager.addProduct(new Product(9, "Samsung Galaxy S5"));
     }
+    
+    /**
+     * This method will run all the tests 
+     */
+    public void runDemo()
+    {
+       demoDeliverProduct();
+       sellProduct(0);
+       sellProduct(0);
+       sellProduct(1);
+       sellProduct(0);
+       sellProduct(3);
+       sellProduct(3);
+       sellProduct(5);
+       sellProduct(7);
+       sellProduct(2);
+       sellProduct(7);
+    } 
     
     /**
      * Provide a very simple demonstration of how a StockManager
      * might be used. Details of one product are shown, the
      * product is restocked, and then the details are shown again.
      */
-    public void demo()
+    public void demoDeliverProduct()
     {
-        // Show details of all of the products.
-        manager.printProductDetails();
-        // Take delivery of 5 items of one of the products.
-        manager.delivery(132, 5);
-        manager.printProductDetails();
+      manager.delivery(0, 1);
+      manager.delivery(1, 3);
+      manager.delivery(2, 5);
+      manager.delivery(3, 9);
+      manager.delivery(4, 9);
+      manager.delivery(5, 9);
+      manager.delivery(6, 9);
+      manager.delivery(7, 9);
+      manager.delivery(8, 9);
+      manager.delivery(9, 9);
+     
     }
     
     /**
@@ -44,12 +76,7 @@ public class StockDemo
      */
     public void showDetails(int id)
     {
-        Product product = getProduct(id);
-        
-        if(product != null) 
-        {
-            System.out.println(product.toString());
-        }
+        manager.printProductDetails(id);
     }
     
     /**
@@ -59,32 +86,13 @@ public class StockDemo
      */
     public void sellProduct(int id)
     {
-        Product product = getProduct(id);
         
-        if(product != null) 
+        if(manager.findProduct(id) != null) 
         {
-            showDetails(id);
-            product.sellOne();
-            showDetails(id);
+            manager.printProductDetails(id);
+            manager.sellQuantity(id);
+            manager.printProductDetails(id);
         }
-    }
-    
-    /**
-     * Get the product with the given id from the manager.
-     * An error message is printed if there is no match.
-     * @param id The ID of the product.
-     * @return The Product, or null if no matching one is found.
-     */
-    public Product getProduct(int id)
-    {
-        Product product = manager.findProduct(id);
-        
-        if(product == null) 
-        {
-            System.out.println("Product with ID: " + id +
-                               " is not recognised.");
-        }
-        return product;
     }
 
     /**
@@ -94,4 +102,5 @@ public class StockDemo
     {
         return manager;
     }
+    
 }
