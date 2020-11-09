@@ -1,0 +1,13 @@
+Product product1 = new Product(01, "Samsung Galaxy S10");
+product1.getQuantity()
+    returned int 0
+product1.getID()
+    returned int 1
+product1.increaseQuantity(10);
+product1.renameProducts("Iphone X");
+product1.sellOne();
+product1.increaseQuantity(2);
+product1.getID()
+    returned int 1
+product1.getName()
+    returned String "Iphone X"
