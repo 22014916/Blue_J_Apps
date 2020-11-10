@@ -1,0 +1,35 @@
+StockManager stockMan1 = new StockManager();
+StockDemo stockDem1 = new StockDemo(stockMan1);
+stockDem1.demoDeliverProduct();
+stockDem1.getManager()
+    returned Object <object reference>
+stockDem1.runDemo();
+0: Samsung Galaxy S10 stock level: 2
+0: Samsung Galaxy S10 stock level: 1
+0: Samsung Galaxy S10 stock level: 1
+0: Samsung Galaxy S10 stock level: 0
+1: Nokia Brick stock level: 6
+1: Nokia Brick stock level: 5
+0: Samsung Galaxy S10 stock level: 0
+Attempt to sell an out of stock item: Samsung Galaxy S10
+0: Samsung Galaxy S10 stock level: 0
+3: Samsung Galaxy S11 stock level: 18
+3: Samsung Galaxy S11 stock level: 17
+3: Samsung Galaxy S11 stock level: 17
+3: Samsung Galaxy S11 stock level: 16
+5: Nokia Lumia stock level: 18
+5: Nokia Lumia stock level: 17
+7: Samsung Galaxy S7 stock level: 18
+7: Samsung Galaxy S7 stock level: 17
+2: Iphone X stock level: 10
+2: Iphone X stock level: 9
+7: Samsung Galaxy S7 stock level: 17
+7: Samsung Galaxy S7 stock level: 16
+stockDem1.sellProduct(1);
+1: Nokia Brick stock level: 5
+1: Nokia Brick stock level: 4
+stockDem1.showDetails(2);
+2: Iphone X stock level: 9
+stockDem1.demoDeliverProduct();
+stockDem1.getManager()
+    returned Object <object reference>
