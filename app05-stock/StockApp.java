@@ -10,7 +10,7 @@
 public class StockApp
 {
     public static final char CLEAR_CODE = '\u000c';
-    
+
     public static final String QUIT = "quit";
     public static final String ADD = "add";
 
@@ -19,11 +19,11 @@ public class StockApp
     private InputReader input;
 
     private StockManager manager;
-    
+
     private StockDemo demo;
 
     private int nextID = FIRST_ID;
-    
+
     private String [] menuChoices;
 
     /**
@@ -34,25 +34,29 @@ public class StockApp
         input = new InputReader();
         manager= new StockManager();
         demo = new StockDemo(manager);
-         
+
         setUpMenu();
     }  
-    
+
+    /**
+     * setup menu where the certain words
+     * will perfrom the tasks
+     */
     private void setUpMenu()
     {
-         menuChoices = new String[]
+        menuChoices = new String[]
         {
-        "Add a new product",
-        "Remove an old product",
-        "Deliver a quantity of product",
-        "Sell a quantity of product",
-        "Print all products",
-        "Search for products",
-        "Restock the product",
-        "Quit the program",
+            "Add a new product",
+            "Remove an old product",
+            "Deliver a quantity of product",
+            "Sell a quantity of product",
+            "Print all products",
+            "Search for products",
+            "Restock the product",
+            "Quit the program",
         };
     }    
-    
+
     /** Run method that prints out the heading
      * 
      */
@@ -65,31 +69,33 @@ public class StockApp
             printHeading();
             printMenuChoices();
             String choice = input.getInput().toLowerCase();
-            
-            
+
             
             if(choice.equals(QUIT))
                 finished = true;
             else
-             executeMenuChoice(choice);
+                executeMenuChoice(choice);
         }
     }
 
+    /**
+     * A get method that gets 
+     */
     public void getMenuChoice()
     {
         boolean finished = false;
-        
+
         while(!finished)
         {
             printHeading();
             printMenuChoices();
-            
+
             String choice = input.getInput();
             choice = choice.toLowerCase();
-            
+
             if (choice.equals("quit"))
             {
-              finished = true;
+                finished = true;
             } 
             else
             {
@@ -97,9 +103,10 @@ public class StockApp
             }    
         }   
     }
-    
-    /**
-     * 
+
+    /**The execute method that deals with adding and 
+     * removing and syntaxes when utilising the program as 
+     * a user.
      */
     private void executeMenuChoice(String choice)
     {
@@ -111,32 +118,36 @@ public class StockApp
         {
             removeProduct();
         } 
-         else if (choice.equals("printall"))
+        else if (choice.equals("printall"))
         { 
-          printAllProducts();
+            printAllProducts();
         }  
-         else if (choice.equals("deliver"))
+        else if (choice.equals("deliver"))
         { 
-          deliverProduct();
+            deliverProduct();
         } 
-         else if (choice.equals("sell"))
+        else if (choice.equals("sell"))
         { 
-          sellProduct();
+            sellProduct();
         }
         else if (choice.equals("low stock"))
         { 
-          displaylowstockProduct();
+            displaylowstockProduct();
         }
         else if (choice.equals("restock"))
         { 
-          restockProduct();
+            restockProduct();
         }
         else if (choice.equals("search"))
         { 
-          searchProduct();
+            searchProduct();
         }
     }
 
+    /**
+     * A add product method when you need
+     * new stock.
+     */
     public void addProduct()
     {       
         System.out.println ("Add a new Product");
@@ -147,11 +158,15 @@ public class StockApp
 
         Product product = new Product(nextID, name);
         manager.addProduct(product);
-        
+
         System.out.println("\nAdded " + product + " to the stock");
         nextID++;
-    }    
+    }  
 
+    /**
+     * A remove product method when you want to get rid of
+     * product
+     */
     public void removeProduct()
     {
         System.out.println ("Remove an old Product");
@@ -159,14 +174,17 @@ public class StockApp
 
         System.out.println ("Please enter the id of the product");
         String number = input.getInput();
-        
+
         int id = Integer.parseInt(number);
 
-         manager.removeProduct(id);
-         
+        manager.removeProduct(id);
+
         nextID++; 
     }
-    
+    /**
+     * A sell product method when a user is buying a product it will 
+     * sell it to them.
+     */
     public void sellProduct()
     {
         System.out.println ("Sell a quantity of Product");
@@ -174,24 +192,31 @@ public class StockApp
 
         System.out.println ("Please enter the id of the product");
         String number = input.getInput();
-        
+
         int id = Integer.parseInt(number);
 
-         manager.sellQuantity(id);
-         
+        manager.sellQuantity(id);
+
         nextID++; 
     }
-    
-     public void displaylowstockProduct()
+
+    /**
+     * A method to indicate when the stock is low.
+     */
+    public void displaylowstockProduct()
     {
         System.out.println ("The product stock is low ");
         System.out.println ();
 
-         manager.displaylowstock();
-         
+        manager.displaylowstock();
+
         nextID++; 
     }
-    
+
+    /**
+     * deliverProduct method with inputs as (name,id) for
+     * when the user wants the item delivered
+     */
     public void deliverProduct()
     {
         System.out.println ("Deliver a quantity of Product");
@@ -199,30 +224,39 @@ public class StockApp
 
         System.out.println ("Please enter the id of the product");
         String number = input.getInput();
-        
+
         int id = Integer.parseInt(number);
-        
+
         System.out.println ("Please enter the amount of the product");
         String amount = input.getInput();
-        
+
         int amount1 = Integer.parseInt(amount);
-        
-         manager.delivery(id, amount1);
-         
+
+        manager.delivery(id, amount1);
+
         System.out.println("\nAdded " + amount + " product to the stock");
         nextID++; 
     }
+
+    /**
+     * A restock method for an individual to restock when 
+     * running low
+     */
     
     public void restockProduct()
     {
-      System.out.println ("The product stock has been restocked ");
+        System.out.println ("The product stock has been restocked ");
         System.out.println ();
 
-         manager.restock();
-         
+        manager.restock();
+
         nextID++;  
     }    
-    
+
+    /**
+     * A search product method for the user to locate a product.
+     * Input (ID).
+     */
     public void searchProduct()
     {
         System.out.println ("Search a new Product");
@@ -230,14 +264,14 @@ public class StockApp
 
         System.out.println ("Please enter the id of the product");
         String number = input.getInput();
-        
+
         int id = Integer.parseInt(number);
-        
+
         Product p1 = manager.findProduct(id);
         System.out.println(p1.getID() + p1.getName());
-        
+
     }    
-    
+
     /**
      * Print out a menu of operation choices
      */
@@ -255,6 +289,9 @@ public class StockApp
         System.out.println();        
     }
 
+     /**
+     * Print all product method to display our products.
+     */
     public void printAllProducts()
     {
         manager.printAllProducts();  

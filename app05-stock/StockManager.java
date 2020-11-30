@@ -40,6 +40,10 @@ public class StockManager
         stock.get(id).increaseQuantity(amount);
     }
 
+    /**
+     * A restock product method.
+     * Gets id and increase quantity by 5. 
+     */
     public void restock()
     {
         for (Product product : stock)
@@ -127,6 +131,9 @@ public class StockManager
         return null;
     }
 
+    /**
+     * A search method for products with the parameter (String)
+     */
     public void search(String name)
     {
         int counter = 0;
