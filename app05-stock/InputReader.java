@@ -1,11 +1,11 @@
-import java.util.HashSet;
+
 import java.util.Scanner;
 
 /**
  * InputReader reads typed text input from the standard text terminal. 
  * The text typed by a user is returned.
  * 
- * @author     Michael Kölling and David J. Barnes
+ * @author Abdul Salam
  * @version    0.1 (2016.02.29)
  */
 public class InputReader
@@ -30,7 +30,8 @@ public class InputReader
     {
         System.out.print("> ");         // print prompt
         String inputLine = reader.nextLine();
-
+        inputLine = inputLine.toLowerCase();
+        
         return inputLine;
     }
 }

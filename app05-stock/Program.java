@@ -1,8 +1,8 @@
 
 /**
- * Write a description of class Program here.
+ * This is the program class in charge for the apps programming.
  *
- * @author (your name)
+ * @author (Abdul Salam)
  * @version (a version number or a date)
  */
 public class Program
