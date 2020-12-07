@@ -269,7 +269,6 @@ public class StockApp
 
         Product p1 = manager.findProduct(id);
         System.out.println(p1.getID() + p1.getName());
-
     }    
 
     /**
@@ -282,7 +281,7 @@ public class StockApp
         System.out.println("    Remove:     Remove an old product");
         System.out.println("    Sell:       Sell a quantity of product");
         System.out.println("    PrintAll:   Print all products");
-        System.out.println("    Low Stock:  The stock is low");
+        System.out.println("    Low Stock:   The stock is low");
         System.out.println("    Search:     Search for product");
         System.out.println("    Deliver:    Deliver a quantity of product");
         System.out.println("    Quit:       Quit the program");
